@@ -1,6 +1,6 @@
 variable "region" {
   description = "Define what region the instance will be deployed"
-  default     = "us-east-1"
+  default     = "us-west-1"
 
 }
 
@@ -11,13 +11,13 @@ variable "name" {
 
 variable "env" {
   description = "Environment of the application"
-  default     = "prod"
+  default     = "dev"
 }
 
-variable "ami" {
-  description = "AWS AMI to be used"
-  default     = "ami-0b93ce03dcbcb10f6"
-}
+# variable "ami" {
+#   description = "AWS AMI to be used"
+#   default     = "ami-0b93ce03dcbcb10f6"
+# }
 
 variable "instance_type" {
   description = "AWS Instance Type define the hardware configuration of the machine"
