@@ -1,13 +1,13 @@
 variable "region" {
   description = "Define what region the instance will be deployed"
-  default     = "us-west-1"
+  default     = "us-east-1"
 
 }
 
-variable "name" {
-  description = "Name of application"
-  default     = "server01"
-}
+# variable "name" {
+#   description = "Name of application"
+#   default     = "server-${count.index}"
+# }
 
 variable "env" {
   description = "Environment of the application"

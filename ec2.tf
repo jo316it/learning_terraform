@@ -1,7 +1,7 @@
 data "aws_ami" "ubuntu" {
   most_recent = true
   filter {
-    name  = "name"
+    name   = "name"
     values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
   }
 
@@ -12,9 +12,10 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "server" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
+  count         = 4
 
   tags = {
-    Name        = var.name
+    Name        = "server-${count.index}"
     Environmnet = var.env
     Provisioner = "Terraform"
     Repo        = var.repo
